@@ -1,0 +1,36 @@
+
+@font-face {
+    font-family: 'yanone_kaffeesatzbold';
+    src: url('yanonekaffeesatz-bold-webfont.woff2') format('woff2'),
+         url('yanonekaffeesatz-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'yanone_kaffeesatzextra_light';
+    src: url('yanonekaffeesatz-extralight-webfont.woff2') format('woff2'),
+         url('yanonekaffeesatz-extralight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'yanone_kaffeesatzlight';
+    src: url('yanonekaffeesatz-light-webfont.woff2') format('woff2'),
+         url('yanonekaffeesatz-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'yanone_kaffeesatzregular';
+    src: url('yanonekaffeesatz-regular-webfont.woff2') format('woff2'),
+         url('yanonekaffeesatz-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

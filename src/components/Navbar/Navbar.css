@@ -1,0 +1,24 @@
+ .main-navigation{
+    font-size: 24px;
+    float: left;
+    list-style: none;
+    display: flex;
+    transform: scale(1, 0.6);
+    font-family: yanone_kaffeesatzregular;
+    text-transform: uppercase;
+  }
+  .main-navigation li{
+    margin-right:30px;
+  }
+  .main-navigation a, .main-navigation a:visited{
+    text-decoration: none;
+    color:inherit;
+  }
+  .main-navigation .selected a{
+    text-decoration: underline;
+  }
+    @media all and (max-width:60rem){
+      .main-navigation{
+        display: none;
+      }
+    }

@@ -1,0 +1,10 @@
+button{
+  color: white;
+  background-color: #005c9d;
+  height: 42px;
+  text-align: center;
+  font-family: 'open sans';
+  font-weight: bold;
+  border:none;
+  box-shadow: none;
+}

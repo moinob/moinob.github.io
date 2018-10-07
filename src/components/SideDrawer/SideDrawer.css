@@ -1,0 +1,27 @@
+.side-navigation{
+  font-size: 30px;
+  list-style: none;
+  width:60%;
+  height: 100vh;
+  float:left;
+  margin:0;
+  position: fixed;;
+  background-color: black;
+  color: white;
+  z-index: 1;
+  padding-top:90px;
+  padding-left:10px;
+  visibility: hidden;
+}
+.side-navigation a, .main-navigation a:visited{
+  text-decoration: none;
+  color:inherit;
+}
+ .selected a{
+  text-decoration: underline;
+}
+@media all and (max-width:60rem){
+  .side-navigation{
+  visibility: visible;
+  }
+}
