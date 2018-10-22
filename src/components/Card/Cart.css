@@ -1,0 +1,37 @@
+.cart {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAflBMVEUAAAD////////////////+/v7////////+/v7+/v7+/v7+/v7////+/v7+/v7+/v7////+/v7+/v7+/v7+/v7+/v7////+/v7+/v7+/v7////+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v739/r///8g7bvJAAAAKHRSTlMAAAEDCA0QHiEnKjhER1ZdYGlweYGGiJWapqqssLS+yNLg5uzu9vf8+y+AfAAAAGhJREFUeNrNykkSgjAARNEGGZQZUeZJAbXvf0EgbpIKB+BtuupX48/yg41nQnJ9UWgvUiyWaH8+GUqxG8W4TKWY3MU4uQ/BftSqKgYaamJ8yJ+CrEE9dmeMXz22GPSY4dZPs+JdWjAOrEVtLH5JmtXeAAAAAElFTkSuQmCC);
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  cursor: pointer;
+
+}
+.cart span.item-count{
+  float:right;
+  font-size:small;
+  margin-top: 10px;
+}
+.cart:hover:after {
+  content: attr(tooltip);
+  position: absolute;
+  width: 178px;
+  top: 54px;
+  left:calc(100% - 192px);
+  display: block;
+  background-color: #1c94cd;
+  padding: 5px;
+  font-weight: normal;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+.cart:hover:before{
+  content: ' ';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #1c94cd;
+    position: absolute;
+    right: 30px;
+    top: 47px;
+}

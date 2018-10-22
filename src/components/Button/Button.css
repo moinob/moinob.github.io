@@ -8,3 +8,6 @@ button{
   border:none;
   box-shadow: none;
 }
+_:-ms-fullscreen, :root button{
+  font-family:'open_sansregular';
+}

@@ -63,6 +63,8 @@ class ApplicationForm extends Component{
     return(
     <form className="container" onSubmit={this.handleSubmit}>
     <h3>Personal details *</h3>
+    <div className={"row"}>
+    <div className={"col-1"}>
       {/* Applicant Name */}
       <Input type={'text'}
                 name= {'name'}
@@ -71,7 +73,8 @@ class ApplicationForm extends Component{
                 handleChange = {this.handleChange}
                 handleBlur = {this.handleBlur}
                 /> 
-
+</div>
+<div className={"col-2"}>
       {/* Applicant Family Name */}
       <Input type={'text'}
                 name= {'surname'}
@@ -80,6 +83,10 @@ class ApplicationForm extends Component{
                 handleChange = {this.handleChange}
                 handleBlur = {this.handleBlur}
                 /> 
+                </div>
+      </div>
+      <div className={"row"}>
+    <div className={"col-1"}>
       <Input type={'email'}
                 name= {'email'}
                 value={this.state.applicant.email || ''} 
@@ -87,6 +94,8 @@ class ApplicationForm extends Component{
                 handleChange = {this.handleChange}
                 handleBlur = {this.handleBlur}
                 />
+                </div>
+                <div className={"col-2"}>
       <Input type={'date'}
                 name= {'dateOfBirth'}
                 value={this.state.applicant.dateOfBirth || ''} 
@@ -94,6 +103,10 @@ class ApplicationForm extends Component{
                 handleChange = {this.handleChange}
                 handleBlur = {this.handleBlur}
                 />
+                </div>
+                </div>
+                <div className={"row"}>
+    <div className={"col-1"}>
       <Select
         name={'sex'}
         type={'select'}
@@ -103,7 +116,12 @@ class ApplicationForm extends Component{
         handleChange = {this.handleChange}
         handleBlur = {this.handleBlur}
       />
+      </div>
+      </div>
       <h3>Attach your documents <span style={{fontSize:' 0.8rem'}}>(pdf, doc(x), jpg max. 4Mb)</span></h3>
+      
+      <div className={"row"}>
+    <div className={"col-1"}>
       <FileUploader
         label={'Resume*'} 
         name= {'attachment'}
@@ -112,13 +130,18 @@ class ApplicationForm extends Component{
         accept ={this.state.fileTypes}
         uploadTypes={this.state.uploadTypes}
       />
-      
+      </div>
+      </div>
       <br />
-      <a href="job.html"> &#60; back to job description </a>
+      <div className={"row"}>
+    <div className={"col-1"}><a href="job.html"> &#60; back to job description </a></div>
+    <div className={"col-2"}>
       <Button
       title={"Apply For This Job"}
       onClick={this.onSubmit}
       />
+      </div>
+      </div>
   </form>
   )
 }

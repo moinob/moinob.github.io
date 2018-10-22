@@ -28,7 +28,6 @@
     "fs-extra": "7.0.0",
     "html-webpack-plugin": "4.0.0-alpha.2",
     "identity-obj-proxy": "3.0.0",
-    "jest": "23.6.0",
     "jest-pnp-resolver": "1.0.1",
     "jest-resolve": "23.6.0",
     "less": "^3.8.1",
@@ -65,7 +64,7 @@
   "browserslist": [
     ">0.2%",
     "not dead",
-    "not ie <= 11",
+    "not ie < 10",
     "not op_mini all"
   ],
   "jest": {
@@ -108,5 +107,12 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.2.1",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "jest": "^23.6.0",
+    "react-test-renderer": "^16.5.2"
   }
 }

@@ -1,37 +1,66 @@
 @import "fonts/yanone-font.css";
 @import "fonts/google-fonts.css";
+@import "fonts/opensansforie.css";
 
 .App {
   font-family: yanone_kaffeesatzbold;
   background-color: #f7f7f7;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: minmax(45px, auto) max-content auto;
+  grid-template: 
+    "1" 
+    "2"
+    "3"/ 
+    1fr;
 }
 .App-header {
   background-color: #000;
-  min-height: 45px;
-  display: flex;
-  flex-direction: column;
-  padding: 0 10px;
-  justify-content: center;
+  min-height: calc(46px - padding);
+  display: grid;
+  padding: 10px;
   font-size: calc(10px + 2vmin);
   color: white;
+  grid-area: 1;
+  grid-template:
+  "btn logo nav search cart"/
+  40px 61px minmax(max-content, 1fr) max-content 100px;
+  grid-gap: 5px;
 }
-
+.App-header .Logo{
+  grid-area: logo;
+}
+.App-header .Navbar{
+  grid-area: nav;
+}
+.App-header .SearchBox{
+  grid-area: search;
+}
+.App-header .Cart{
+  grid-area: cart;
+}
+.hamberger-button{
+  grid-area: btn;
+}
+section[role="main"]{
+  grid-area: 2;
+  grid: 
+  "page-title"
+  "page-content"
+  "related-info"/
+  1fr;
+}
+footer{
+  grid-area: 3;
+}
 .page-content{
   margin:0 auto;
   width:60%;
+  grid-area: page-content;
 }
 .title-wrapper{
   width: 60%;
   background-color: rgba(0, 0, 0, 0.5);
   color:white;
   margin: auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   padding:20px;
   text-align: center;
 }
@@ -77,6 +106,13 @@ h3{
   display: flex;
   flex-direction: column;
   align-items: center;
+  grid-area: page-title;
+  display: -ms-flexbox;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
+
 }
 .related-information{
   min-height: 400px;
@@ -88,33 +124,50 @@ h3{
   display: flex;
   flex-direction: column;
   align-items: center;
+  grid-area: related-info;
 }
 .info-wrapper{
   background:white;
   display: grid;
   margin: auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   padding:20px;
   width:60%;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 1rem;
+  grid-template:
+  "left right"/
+  1fr 1fr;
+  grid-gap: 1em;
+}
+.info-wrapper .grid-column-left{
+  grid-area: left;
+}
+.info-wrapper .grid-column-right{
+  grid-area: right;
 }
 .hamberger-button{
-  width:40px;
-  height:40px;
+  width:32px;
+  height:32px;
   background-color: transparent;
   display: none;
   border: none;
   outline:none;
   cursor:pointer;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAhCAMAAACcLxmXAAAAOVBMVEX///////////////////////////////////////////////////////////////////////////+0EB4eAAAAEnRSTlMALS5RUnt8j5nCzN7h7fD19vk0eB07AAAAUklEQVQ4y+WUQRKAIAwDAyIIqMX+/7F+YS8MB/acQ9NJotMcYFmfI4YcMkF4M11XLBegRO3JURugJr3s4c/KUOAbE3W9J4F2BrdwYSjwmmW4jz+EFzTIqBrnKQAAAABJRU5ErkJggg==);
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+IDx0aXRsZS8+IDxkZXNjLz4gPGc+ICA8dGl0bGU+YmFja2dyb3VuZDwvdGl0bGU+ICA8cmVjdCBmaWxsPSJub25lIiBpZD0iY2FudmFzX2JhY2tncm91bmQiIGhlaWdodD0iNDAyIiB3aWR0aD0iNTgyIiB5PSItMSIgeD0iLTEiLz4gPC9nPiA8Zz4gIDx0aXRsZT5MYXllciAxPC90aXRsZT4gIDxwYXRoIGZpbGw9IiNmZmZmZmYiIGlkPSJzdmdfMSIgZD0ibTAsMmwyNSwwbDAsNGwtMjUsMGwwLC00em0wLDhsMjUsMGwwLDRsLTI1LDBsMCwtNHptMCw4bDI1LDBsMCw0bC0yNSwwbDAsLTR6Ii8+IDwvZz48L3N2Zz4=);
   background-position: center;
   background-repeat: no-repeat;
   z-index: 2;
   position: fixed;
+  transform: scale(1.3);
+}
+_:-ms-fullscreen, :root .info-wrapper, _:-ms-fullscreen, :root .title-wrapper{
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+@media all and (max-width:80rem){
+  .App-header{
+    grid-template: 
+    "btn logo nav search cart"/
+    40px 61px minmax(max-content, 1fr) max-content 50px;
+  }
 }
 @media all and (max-width:60rem){
   .hamberger-button{
@@ -124,6 +177,18 @@ h3{
     font-size: 0.5rem;
   }
   .info-wrapper{
-    grid-template-columns: 1fr;
+    grid-template: 
+    "left"
+    "right" /
+    1fr;
+  }
+  .App-header{
+    grid-template: 
+    "btn logo cart" 36px
+    "search search search" auto /
+    40px 1fr 100px;
+  }
+  .App-header .SearchBox{
+    width: 100%;
   }
 }

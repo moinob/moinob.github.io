@@ -11,7 +11,7 @@ input[type=file]{
 .uploader-wrapper span, .uploader-wrapper label{
   display: table-cell;
   vertical-align: middle;
-  font-family: 'open sans';
+  font-family: 'open sans', 'open_sansregular';
   font-weight: bold;
   font-size: 13px;
 }

@@ -3,7 +3,7 @@ import './Navbar.css'
 
 function Navbar(props){
   return (
-    <ul className={'main-navigation'}>
+    <ul className={'main-navigation ' + props.className}>
       {props.list.map((item) => (
         <li className={(item.active)? 'selected': ''} key={item.name}>
           <a href={item.path}>{item.name}</a>
